@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+        ubuntu:
+                build: .
+                container_name: 'ubuntu'
+                working_dir: '/home/atcoder'
+                volumes:
+                        - type: bind
+                          source: ./src
+                          target: /home/atcoder
+
+                stdin_open: true
+                tty: true
+                command: /bin/bash
